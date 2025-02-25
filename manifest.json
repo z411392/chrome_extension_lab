@@ -21,5 +21,26 @@
     "options_ui": {
         "page": "options.html",
         "open_in_tab": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ],
+            "js": [
+                "./contents/https/all/all/js/main.js"
+            ],
+            "css": [
+                "./contents/https/all/all/css/main.css"
+            ],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "service_worker": "service_worker.js"
     }
 }
